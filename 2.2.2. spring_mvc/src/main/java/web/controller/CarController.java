@@ -16,14 +16,14 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-//// Выводим список всех машин на экран
+//// Выводим список всех машин на WEB страницу
 //    @GetMapping()
 //    public String index(Model model) {
 //        model.addAttribute("list", carService.getCarServiceList());
 //        return "indexCar";
 //    }
 
-    // Выводим список машин на экран взависимости от запроса
+    // Выводим список машин на WEB страницу взависимости от запроса
     @GetMapping()
     public String showCar(@RequestParam(value = "count", required = false) Integer count, Model model) {
         if (count == null) {
