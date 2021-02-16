@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ВСЕ МАШИНЫ</title>
+</head>
+<body>
+<br>
+<a HREF="/cars?count=1">Проверка работы таблицы = 1</a>
+<br>
+<a HREF="/cars?count=-3">Проверка работы таблицы = -3</a>
+<br>
+<a HREF="/cars?count=2">Проверка работы таблицы = 2</a>
+<br>
+<a HREF="/cars?count=6">Проверка работы таблицы = 6</a>
+<br>
+<a HREF="/cars?count=3">Проверка работы таблицы = 3</a>
+<br>
+<a HREF="/cars">Проверка работы таблицы = null</a>
+<br>
+<a HREF="/cars?count=4">Проверка работы таблицы = 4</a>
+<br>
+<a HREF="/cars?cotunt=1">Проверка работы таблицы = неправильные символы запроса</a>
+<br>
+    <h2> ВСЕ МАШИНЫ</h2>
+    <br>
+    <table border="1">
+    <tr>
+        <th>Модель</th>
+        <th>Цвет</th>
+        <th>Год выпуска</th>
+    </tr>
+    <tr th:each="msg : ${list}">
+        <td th:text="${msg.getModel()}">car</td>
+        <td th:text="${msg.getColor()}">car</td>
+        <td th:text="${msg.getAge()}">car</td>
+    </tr>
+
+    </table>
+    <br>
+
+</body>
+</html>
